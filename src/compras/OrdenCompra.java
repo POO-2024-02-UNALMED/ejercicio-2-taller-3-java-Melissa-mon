@@ -1,14 +1,14 @@
 package compras;
 
-import Empleado; // (1) Empleado, se usa un objeto empleado en lin13 en el constructor
+import gestionHumana.Empleado;
 import java.util.ArrayList;
 
-public class OrdenCompra { //(3) OrdenCombra, la unica clase publica debe tener el nombre del archivo, ademas constructor en 13 tiene el nombre de la clase
+public class OrdenCompra {
 
-    public int codigo; //publico
-    private String tipo; //private
-    private Empleado comprador; //private
-    public ArrayList<Producto> productos; //public
+    public int codigo;
+    private String tipo;
+    private Empleado comprador;
+    public ArrayList<Producto> productos;
 
     public OrdenCompra(int codigo, String tipo, Empleado comprador,
             ArrayList<Producto> productos) {
@@ -19,7 +19,7 @@ public class OrdenCompra { //(3) OrdenCombra, la unica clase publica debe tener 
         Producto.totalProductosPedidos += productos.size();
     }
 
-    public void agregarProducto(Producto producto) { //public
+    public void agregarProducto(Producto producto) {
         if (producto.tipo.equals(tipo)) {
             productos.add(producto);
             Producto.totalProductosPedidos++;
@@ -28,7 +28,7 @@ public class OrdenCompra { //(3) OrdenCombra, la unica clase publica debe tener 
 
     public void retirarProducto(Empleado empleado, Producto producto) {
         if (!empleado.tengoPermiso()) {
-            return; //return
+            return
         }
         retirarProducto(producto);
     }
@@ -45,8 +45,8 @@ public class OrdenCompra { //(3) OrdenCombra, la unica clase publica debe tener 
         }
     }
 
-    public void descontar() { //void
+    public void descontar() {
         Producto.totalProductosPedidos -= productos.size();
     }
-
+    
 }

@@ -1,10 +1,10 @@
-package gestionHumana; //(4) gestionHumana, es la carpeta
+package gestionHumana;
 
 public class Empleado {
 
-    public final long cedula; //(5) public
-    private String nombre; //(6) private
-    private String cargo; //(7) private
+    public final long cedula;
+    private String nombre;
+    private String cargo;
     
     public Empleado(long cedula, String nombre, String cargo) {
         this.cedula = cedula;
@@ -12,7 +12,7 @@ public class Empleado {
         this.cargo = cargo;
     }
 
-    public boolean tengoPermiso() { //(8) public
+    public boolean tengoPermiso() {
         return cargo.contains("Administrador");
     }
 }

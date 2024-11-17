@@ -2,30 +2,31 @@ package compras;
 
 public class Producto {
     
-    private final int codigo; //(9)private
-    private String nombre;//(13) private
-    default String tipo; //(14) default
-    default static int totalProductosPedidos; //default
+    private final int codigo;
+    private String nombre;
+    default String tipo;
+    default static int totalProductosPedidos;
 
-    public Producto(int codigo, String nombre, String tipo) { //(12) public?
+    public Producto(int codigo, String nombre, String tipo) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
     }
 
-    default void imprimirNombre() { //(11) default, se usa en oc
+    default void imprimirNombre() {
         System.out.print(nombre);
     }
 
     public void setCodigo(int codigo) {
-        return; //si?
+        return
     }
 
-    public int getCodigo() { //(10) int
+    public String getCodigo() {
         return codigo;
     }
 
-    public static int getTotalProductosPedidos() { //(2) public, se usa en lin20 de ObjTaller3
+    public static int getTotalProductosPedidos() {
         return totalProductosPedidos;
     }
 }
+
